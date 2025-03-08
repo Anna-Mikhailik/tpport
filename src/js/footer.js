@@ -1,21 +1,22 @@
 // import { postRequest } from './api';
 import iziToast from 'izitoast';
+import { addClassIsOpenModal } from './modal';
 
 async function postRequest(options) {
-  try {
-    const response = await fetch(
-      'https://portfolio-js.b.goit.study/api/requests',
-      options
-    );
-    if (!response.ok) {
-      throw new Error('Not found');
+    try {
+      const response = await fetch(
+        'https://portfolio-js.b.goit.study/api/requests',
+        options
+      );
+      if (!response.ok) {
+        throw new Error('Not found');
+      }
+      return response.json();
+    } catch (error) {
+      throw error;
     }
-    return response.json();
-  } catch (error) {
-    throw error;
   }
-}
-
+  
 const form = document.querySelector('.footer-form-order');
 // const modalWindow = document.querySelector('.modal-window');
 const emailInput = document.querySelector('.email');
@@ -42,18 +43,16 @@ function validate(input) {
     input.classList.remove('error-label');
     input.classList.add('success-label');
     addMessage(input, 'Success!', 'success');
-    if (labelError) {
-      labelError.classList.remove('error-label');
-      labelError.classList.add('success-label');
-    }
+    if(labelError){
+    labelError.classList.remove('error-label');
+    labelError.classList.add('success-label');}
   } else {
     input.classList.remove('success-label');
     input.classList.add('error-label');
     addMessage(input, 'Invalid email, try again', 'error');
-    if (labelError) {
-      labelError.classList.remove('success-label');
-      labelError.classList.add('error-label');
-    }
+    if(labelError){
+    labelError.classList.remove('success-label');
+    labelError.classList.add('error-label');}
   }
 }
 // Створення нового елемента для відображення повідомлення
@@ -142,33 +141,3 @@ function handleSubmit(event) {
   }
   removeMessage(emailInput);
 }
-// modal window open - close //
-// const formFooterButton = document.querySelector(".footer-button-submit");
-const modalWindow = document.querySelector(".modal-window");
-const modalWindowClose = document.querySelector(".modal-close");
-
-export function addClassIsOpenModal() {
-    return modalWindow.classList.add("is-open");
-};
-function deleteClassIsOpenModal() {
-    return modalWindow.classList.remove("is-open");
-};
-//const isOpenModalWindow = formFooterButton.addEventListener("click", addClassIsOpenModal); //open modal on submit form
-const modalCloseButton = modalWindowClose.addEventListener("click", deleteClassIsOpenModal); // close moda on click x
-
-//close modal keydown esc
-const modalWindowCloseEsc = document.addEventListener("keydown", event => {
-   if (event.key === "Escape") {       
-        return modalWindow.classList.remove("is-open");
-    };
-  });
-
-// close modal click backdrop
-const modalWindowCloseBackDrop = modalWindow.addEventListener("click",event => {
-    const clickedElement = event.target;
-    if (clickedElement !== modalWindow) {
-        return;
-}
-    return modalWindow.classList.remove("is-open");
-})
-// modal window open - close //
