@@ -106,7 +106,7 @@ function checkCommentLength(event) {
 modalBtn.addEventListener("click", closeModal);
 modalBackdropBg.addEventListener("click", closeModal);
 document.addEventListener("keydown", event => {
-    if (event.key === 'Escape' || event.key === 'Esc' || event.code === 27) {
+    if (event.key === "Escape" || event.key === "Esc") {
         closeModal();
     }
 });
