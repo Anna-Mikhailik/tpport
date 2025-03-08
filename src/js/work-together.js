@@ -12,6 +12,11 @@ const modalText = document.querySelector(".work-together-invitation");
 const modalBtn = document.querySelector(".work-together-modal-close-x-btn");
 const body = document.body;
 
+// При завантаженні сторінки приховати затемнення
+modalBackdropBg.style.opacity = '0';
+modalBackdropBg.style.visibility = 'hidden';
+modalBackdropBg.style.pointerEvents = 'none';
+
 contactForm.addEventListener("submit", getContactInfo);
 
 function getContactInfo(event) {
