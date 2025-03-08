@@ -113,6 +113,8 @@ function openModal(title, message) {
     modalBackdrop.style.pointerEvents = 'auto';
     modalBackdropBg.classList.remove("visually-hidden");
     modalBackdropBg.style.pointerEvents = 'auto';
+    modalBackdropBg.style.opacity = '1';
+    modalBackdropBg.style.visibility = 'visible';
     body.classList.add('modal-open');
     modalTitle.textContent = title;
     modalText.textContent = message;
@@ -124,5 +126,7 @@ function closeModal() {
     modalBackdrop.style.pointerEvents = 'none';
     modalBackdropBg.classList.add("visually-hidden");
     modalBackdropBg.style.pointerEvents = 'none';
+    modalBackdropBg.style.opacity = '0';
+    modalBackdropBg.style.visibility = 'hidden';
     body.classList.remove('modal-open');
 }
