@@ -17,7 +17,7 @@
 @media screen and (max-width: 767px) {
     .work-together {
         background:
-            url("../img/mobil/bg/m-work-together-glass.png") top right no-repeat;
+            url("../img/work-together/bg/m-work-together-glass.png") top right no-repeat;
     }
 }
 
@@ -27,7 +27,7 @@ screen and (min-resolution: 2dppx) and (max-width: 767px),
 screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     .work-together {
         background:
-            url("../img/mobil/bg/m-work-together-glass@2x.png") top right no-repeat;
+            url("../img/work-together/bg/m-work-together-glass@2x.png") top right no-repeat;
         background-size: 85px 552px;
     }
 }
@@ -36,7 +36,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
 @media screen and (min-width: 768px) {
     .work-together {
             background:
-                url("../img/tablet/bg/t-work-together-glass.png") top right no-repeat;
+                url("../img/work-together/bg/t-work-together-glass.png") top right no-repeat;
         }
 }
 
@@ -46,7 +46,7 @@ screen and (min-resolution: 2dppx) and (min-width: 768px),
 screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
     .work-together {
         background:
-            url("../img/tablet/bg/t-work-together-glass@2x.png") top right no-repeat;
+            url("../img/work-together/bg/t-work-together-glass-2x.png") top right no-repeat;
         background-size: 198px 636px;
     }
 }
@@ -56,7 +56,7 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
     .work-together {
         padding: 0 164px;
         background:
-            url("../img/desktop/bg/d-work-together-glass.png") top right no-repeat;
+            url("../imgwork-together/bg/d-work-together-glass.png") top right no-repeat;
         }
 }
 
@@ -66,7 +66,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1440px),
 screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
     .work-together {
         background:
-            url("../img/desktop/bg/d-work-together-glass@2x.png") top right no-repeat;
+            url("../img/work-together/bg/d-work-together-glass-2x.png") top right no-repeat;
         background-size: 400px 636px;
     }
 }
