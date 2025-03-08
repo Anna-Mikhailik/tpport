@@ -110,7 +110,9 @@ document.addEventListener("keydown", event => {
 function openModal(title, message) {
     modalBackdrop.classList.remove("visually-hidden");
     modalBackdrop.style.display = 'block';
+    modalBackdrop.style.pointerEvents = 'auto';
     modalBackdropBg.classList.remove("visually-hidden");
+    modalBackdropBg.style.pointerEvents = 'auto';
     body.classList.add('modal-open');
     modalTitle.textContent = title;
     modalText.textContent = message;
@@ -119,6 +121,8 @@ function openModal(title, message) {
 function closeModal() {
     modalBackdrop.classList.add("visually-hidden");
     modalBackdrop.style.display = 'none';
+    modalBackdrop.style.pointerEvents = 'none';
     modalBackdropBg.classList.add("visually-hidden");
+    modalBackdropBg.style.pointerEvents = 'none';
     body.classList.remove('modal-open');
 }
