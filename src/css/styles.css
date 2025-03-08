@@ -10,3 +10,9 @@
     --red: #ED3B44;
     --red-hover: #E0373F;
 }
+body{
+background-color: #1c1d20;
+font-family: Inter Tight, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
