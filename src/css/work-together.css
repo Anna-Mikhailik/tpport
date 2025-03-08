@@ -56,7 +56,7 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
     .work-together {
         padding: 0 164px;
         background:
-            url("../imgwork-together/bg/d-work-together-glass.png") top right no-repeat;
+            url("../img/work-together/bg/d-work-together-glass.png") top right no-repeat;
         }
 }
 
