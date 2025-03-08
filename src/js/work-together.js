@@ -22,53 +22,49 @@ function getContactInfo(event) {
     
     const url = 'https://portfolio-js.b.goit.study/api/requests';
     const data = {
-        email: `${userEmail}`,
-        comment: `${userComment}`
+        email: userEmail,
+        comment: userComment
     };
 
-    return fetch(url, {
+    fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
     })
-        .then(response => {
-            if (!response.ok) {
-                return iziToast.error({
-                    title: 'Error',
-                    message: `Sorry, try again!`,
-                    messageColor: 'white',
-                    messageSize: '16',
-                    backgroundColor: 'red',
-                    theme: 'dark',
-                    position: 'bottomRight',
-                });
-            }
-            return response.json();
-        })
-        .then(data => {
-            modalBackdrop.classList.remove("visually-hidden");
-            modalBackdrop.style.display = 'block';
-            modalBackdropBg.classList.remove("visually-hidden");
-            body.classList.add('modal-open');
-            modalTitle.textContent = data.title;
-            modalText.textContent = data.message;
-            contactForm.reset();
-            label.textContent = "";
-            contactEmail.style.borderBottomColor = 'rgba(250, 250, 250, 0.20)';
-        })
-        .catch(error => {
-            return iziToast.error({
+    .then(response => {
+        if (!response.ok) {
+            iziToast.error({
                 title: 'Error',
-                message: `Sorry,  network is fall, check your modem and try again!`,
+                message: 'Sorry, try again!',
                 messageColor: 'white',
                 messageSize: '16',
                 backgroundColor: 'red',
                 theme: 'dark',
                 position: 'bottomRight',
             });
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        openModal(data.title, data.message);
+        contactForm.reset();
+        label.textContent = "";
+        contactEmail.style.borderBottomColor = 'rgba(250, 250, 250, 0.20)';
+    })
+    .catch(() => {
+        iziToast.error({
+            title: 'Error',
+            message: 'Sorry, network failed, check your modem and try again!',
+            messageColor: 'white',
+            messageSize: '16',
+            backgroundColor: 'red',
+            theme: 'dark',
+            position: 'bottomRight',
         });
+    });
 }
 
 contactEmail.addEventListener("blur", checkEmail);
@@ -76,11 +72,10 @@ contactEmail.addEventListener("blur", checkEmail);
 function checkEmail(event) {
     const userEmail = event.target.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (userEmail === "") {
-        return;
-    }
+    if (userEmail === "") return;
+    
     if (emailRegex.test(userEmail)) {
-        label.textContent = "Succes!";
+        label.textContent = "Success!";
         contactEmail.style.borderBottomColor = '#3CBC81';
         label.style.color = '#3CBC81';
     } else {
@@ -93,10 +88,11 @@ function checkEmail(event) {
 contactComment.addEventListener("input", checkCommentLength);
 
 function checkCommentLength(event) {
-    const maxLength = parseInt(this.getAttribute("maxlength"));
-    const userComment = event.target.value.trim();
-    if (userComment > maxLength) {
-        userComment = userComment.slice(0, maxLength);
+    const maxLength = parseInt(contactComment.getAttribute("maxlength"));
+    let userComment = event.target.value;
+    
+    if (userComment.length > maxLength) {
+        contactComment.value = userComment.slice(0, maxLength);
     }
     contactComment.style.whiteSpace = 'nowrap';
     contactComment.style.overflow = 'hidden';
@@ -104,12 +100,21 @@ function checkCommentLength(event) {
 }
 
 modalBtn.addEventListener("click", closeModal);
-/*modalBackdropBg.addEventListener("click", closeModal);*/
+modalBackdropBg.addEventListener("click", closeModal);
 document.addEventListener("keydown", event => {
-    if (event.key === 'Escape' || event.key === 'Esc' || event.code === 27) {
+    if (event.key === 'Escape') {
         closeModal();
     }
 });
+
+function openModal(title, message) {
+    modalBackdrop.classList.remove("visually-hidden");
+    modalBackdrop.style.display = 'block';
+    modalBackdropBg.classList.remove("visually-hidden");
+    body.classList.add('modal-open');
+    modalTitle.textContent = title;
+    modalText.textContent = message;
+}
 
 function closeModal() {
     modalBackdrop.classList.add("visually-hidden");
