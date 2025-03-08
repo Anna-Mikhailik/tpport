@@ -153,7 +153,7 @@ export function addClassIsOpenModal() {
 function deleteClassIsOpenModal() {
     return modalWindow.classList.remove("is-open");
 };
-const isOpenModalWindow = formFooterButton.addEventListener("click", addClassIsOpenModal); //open modal on submit form
+//const isOpenModalWindow = formFooterButton.addEventListener("click", addClassIsOpenModal); //open modal on submit form
 const modalCloseButton = modalWindowClose.addEventListener("click", deleteClassIsOpenModal); // close moda on click x
 
 //close modal keydown esc
