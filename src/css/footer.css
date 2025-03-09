@@ -12,13 +12,15 @@ body {
   font-style: normal;
 }
 
-.footer {
+/*.footer {
   color: #fafafa;
   margin: 0 auto;
-}
+}*/
 
 .work-together {
   position: relative;
+  color: #fafafa;
+  margin: 0 auto;
 }
 
 .span-highlight {
