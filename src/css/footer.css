@@ -12,7 +12,7 @@ body {
   font-style: normal;
 }
 
-.footer{
+.footer {
   color: #fafafa;
   margin: 0 auto;
 }
@@ -204,7 +204,7 @@ body {
 @media screen and (min-width: 768px) {
   .work-together-input-email,
   .work-together-comments {
-    background-color: var(--black);
+    background-color: #1c1d20;
     resize: none;
     border: none;
     color: rgba(250, 250, 250, 0.6);
@@ -231,7 +231,7 @@ body {
 
 .work-together-input-email:focus,
 .work-together-comments:focus {
-  border-color: var(--black);
+  border-color: #1c1d20;
 }
 
 @media screen and (max-width: 767px) {
@@ -426,7 +426,7 @@ body {
 }
 
 .work-together-modal-head-text {
-  color: var(--white);
+  color: #fafafa;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
@@ -443,16 +443,16 @@ body {
 }
 
 .work-together-modal-close-x-svg {
-  fill: var(--white);
+  fill: #fafafa;
   border: none;
-  background: var(--dark-gray);
+  background: #242527;
 }
 
 .work-together-modal-close-x-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--dark-gray);
+  background: #242527;
   border: none;
   border-radius: 50%;
   position: absolute;
