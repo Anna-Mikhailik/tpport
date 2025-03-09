@@ -26,7 +26,7 @@ body {
 .span-highlight {
   color: #ed3b44;
 }
-
+/*
 @media screen and (max-width: 767px) {
   .work-together {
     background: url('../img/work-together/bg/m-work-together-glass.png') top
@@ -78,7 +78,7 @@ body {
     background-size: 400px 636px;
   }
 }
-
+*/
 @media screen and (max-width: 767px) {
   .work-together-header {
     font-size: 40px;
