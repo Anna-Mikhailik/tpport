@@ -456,7 +456,8 @@ body {
   top: 20px;
   right: 20px;
   padding: 3px;
-  stroke:#fafafa
+  stroke:#fafafa;
+  cursor: pointer;
 }
 
 body.modal-open {
