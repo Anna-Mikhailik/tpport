@@ -12,11 +12,6 @@ body {
   font-style: normal;
 }
 
-/*.footer {
-  color: #fafafa;
-  margin: 0 auto;
-}*/
-
 .work-together {
   position: relative;
   color: #fafafa;
@@ -29,7 +24,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .work-together {
-    background: url('../img/work-together/bg/m-work-together-glass.png') top
+    background: url('../img/bg/m-work-together-glass.png') top
       right no-repeat;
   }
 }
@@ -38,7 +33,7 @@ body {
   screen and (min-resolution: 2dppx) and (max-width: 767px),
   screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
   .work-together {
-    background: url('../img/work-together/bg/m-work-together-glass-2x.png') top
+    background: url('../img/bg/m-work-together-glass-2x.png') top
       right no-repeat;
     background-size: 85px 552px;
   }
@@ -46,7 +41,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .work-together {
-    background: url('../img/work-together/bg/t-work-together-glass.png') top
+    background: url('../img/bg/t-work-together-glass.png') top
       right no-repeat;
   }
 }
@@ -55,7 +50,7 @@ body {
   screen and (min-resolution: 2dppx) and (min-width: 768px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
   .work-together {
-    background: url('../img/work-together/bg/t-work-together-glass-2x.png') top
+    background: url('../img/bg/t-work-together-glass-2x.png') top
       right no-repeat;
     background-size: 198px 636px;
   }
@@ -64,7 +59,7 @@ body {
 @media screen and (min-width: 1440px) {
   .work-together {
     padding: 0 164px;
-    background: url('../img/work-together/bg/d-work-together-glass.png') top
+    background: url('../img/bg/d-work-together-glass.png') top
       right no-repeat;
   }
 }
@@ -73,7 +68,7 @@ body {
   screen and (min-resolution: 2dppx) and (min-width: 1440px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .work-together {
-    background: url('../img/work-together/bg/d-work-together-glass-2x.png') top
+    background: url('../img/bg/d-work-together-glass-2x.png') top
       right no-repeat;
     background-size: 400px 636px;
   }
@@ -461,6 +456,7 @@ body {
   top: 20px;
   right: 20px;
   padding: 3px;
+  stroke:#fafafa
 }
 
 body.modal-open {
